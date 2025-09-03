@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+   <form id="form1" onsubmit="inputHandler(event)" action="">
+    <label for="input">First Name</label>
+  <input type="text" id="input">
+  
+  <button onclick="formSubbmited()" style="opacity: 0;">Submit Form</button>
+  <button onclick="formSubmit()">Submit Form</button> 
+  
+</form>
+
+<button style="opacity: 0;" onclick="trap()">Dark Theme</button>
+<button onclick="theme1()">Dark Theme</button>
+<button style="opacity: 0;" onclick="trap()">Light Theme</button>
+<button onclick="theme2()">Light Theme</button>
+
+
+</body>
+<script>
+
+    function trap(){
+        alert("Bot Detected in theme changed Your Ip Blocked")
+        location.reload();
+    }
+function theme1(){
+    document.body.style.backgroundColor = "black";
+}
+
+function theme2(){
+    document.body.style.backgroundColor = "white";
+}
+
+    function formSubbmited(){
+        alert("Bot Detected Your IP Have Been Blocked")
+            location.reload();
+    }
+   function formSubmit(){
+    console.log('Theme Clicked Me');
+    
+   }
+
+    function inputHandler(e) {
+    e.preventDefault(); // Prevents form from reloading the page
+    // Handle input
+    console.log("Hello" , e);
+    
+  }
+
+    const input = (e) =>{
+        e.preventDefault();
+        console.log("Log Someone Clicked changed me");
+    }
+
+    let clock;
+const debounce=()=>{
+    clearTimeout(clock)
+    clock =setTimeout(callrequest,100)
+}
+
+const callrequest=async ()=>{
+const data =await fetch('http://localhost:3000/users/api/products',{
+    headers:{
+        "authorization":"Hello this is my header"
+    }
+}).then((data)=>{
+    console.log(data)
+})
+}
+    
+
+//    const forms=document.forms['form1']
+//    forms[0].value="Happy"
+//    let btn=forms[1]
+   
+//    console.log(btn);
+   
+//    console.log(forms);
+</script>
+</html>
