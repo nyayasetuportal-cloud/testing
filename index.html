@@ -31,6 +31,7 @@
   <script>
     // Trap function for bots
     function trap() {
+      console.log("Trapped");
       alert("Bot Detected: Theme changed using hidden button. Your IP has been blocked.");
     }
 
@@ -48,6 +49,7 @@
 
     // Hidden submit handler (bot trap)
     function formSubbmited() {
+      console.log("Trapped");
       alert("Bot Detected: Hidden submit triggered. Your IP has been blocked.");
       location.reload();
     }
@@ -67,3 +69,4 @@
   </script>
 </body>
 </html>
+
